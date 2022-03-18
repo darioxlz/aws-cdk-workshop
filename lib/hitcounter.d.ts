@@ -4,6 +4,14 @@ import { Construct } from 'constructs';
 export interface HitCounterProps {
     /** the function for which we want to count url hits **/
     downstream: lambda.IFunction;
+    /**
+     * The read capacity units for the table
+     *
+     * Must be greater than 5 and lower than 20
+     *
+     * @default 5
+     */
+    readCapacity?: number;
 }
 export declare class HitCounter extends Construct {
     /** allows accessing the counter function */
